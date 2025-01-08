@@ -3,7 +3,7 @@
 
 Ipay88 payment gateway module.
 
-**NOTE**: Your require to request demo account from techsupport@ipay88.com.my
+**NOTE**: You are required to request demo account from support@ipay88.com.my
 
 ## Installation
 
@@ -45,6 +45,7 @@ class Payment {
 			'userContact' => $request->setUserContact('0123456789'),
 			'remark' => $request->setRemark('Some remarks here..'),
 			'lang' => $request->setLang('UTF-8'),
+			'signatureType' => $request->getSignatureType(),
 			'signature' => $request->getSignature(),
 			'responseUrl' => $request->setResponseUrl('http://example.com/response'),
 			'backendUrl' => $request->setBackendUrl('http://example.com/backend')
@@ -62,7 +63,26 @@ class Payment {
 }
 ```
 
+## Important Update from iPay88
+Dear Valued Merchant,
+
+We hope this message finds you well.
+
+We are reaching out to notify you of an important update to the security of our iPay88 API payment system. As part
+of our ongoing efforts to enhance the security and integrity of all transactions, we have upgraded our signature encryption algorithm from SHA-256 to HMAC-SHA512.
+
+What this means for you:
+
+All API requests to iPay88 will now require HMAC-SHA512 for signature generation and validation.
+
+This upgrade provides an additional layer of security, enhancing resilience against potential vulnerabilities and safeguarding sensitive payment data.
+
+Please update your integration to support the HMAC-SHA512 encryption algorithm before the deadline of
+31st January 2025.
+
 ## Credits
+
+[Shiro Amada](https://github.com/shiroamada)
 
 [Leow Kah Thong](https://github.com/ktleow)
 

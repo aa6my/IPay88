@@ -17,6 +17,10 @@
         {
             "name": "aa6my",
             "email": "aa6my@qq.com"
+        },
+        {
+          "name": "Shiro",
+          "email": "shiroamada@yahoo.com"
         }
     ],
     "minimum-stability": "stable",

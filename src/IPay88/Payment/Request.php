@@ -135,6 +135,17 @@ class Request
 		return $this->lang = $val;
 	}
 
+        private $signatureType;
+	public function getSignatureType()
+	{
+		return $this->signatureType;
+	}
+	public function setSignatureType($val)
+	{
+        //if not set, default set to HMACSHA256
+		return $this->signatureType = $val ? $val : 'HMACSHA256';
+	}
+
 	private $signature;
 	public function getSignature($refresh = false)
 	{
