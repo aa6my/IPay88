@@ -1,7 +1,7 @@
-# IPay88
+# iPay88
 [![Build Status](https://img.shields.io/packagist/dt/karyamedia/ipay88.svg?maxAge=2592000)](https://packagist.org/packages/karyamedia/ipay88) [![Join the chat at https://gitter.im/karyamedia/ipay88](https://badges.gitter.im/karyamedia/ipay88.svg)](https://gitter.im/karyamedia/ipay88?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Ipay88 payment gateway module.
+iPay88 payment gateway module.
 
 **NOTE**: You are required to request demo account from support@ipay88.com.my
 
@@ -45,7 +45,7 @@ class Payment {
 			'userContact' => $request->setUserContact('0123456789'),
 			'remark' => $request->setRemark('Some remarks here..'),
 			'lang' => $request->setLang('UTF-8'),
-			'signatureType' => $request->getSignatureType(),
+			'signatureType' => $request->getSignatureType('HMACSHA256'),
 			'signature' => $request->getSignature(),
 			'responseUrl' => $request->setResponseUrl('http://example.com/response'),
 			'backendUrl' => $request->setBackendUrl('http://example.com/backend')

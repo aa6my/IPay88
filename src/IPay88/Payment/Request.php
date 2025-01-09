@@ -135,7 +135,7 @@ class Request
 		return $this->lang = $val;
 	}
 
-        private $signatureType;
+	private $signatureType;
 	public function getSignatureType()
 	{
 		return $this->signatureType;
