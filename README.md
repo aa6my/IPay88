@@ -47,7 +47,7 @@ class Payment {
 		$this->_data['userContact'] 		= $request->setUserContact('0123456789');
 		$this->_data['remark'] 			= $request->setRemark('Some remarks here..');
 		$this->_data['lang'] 			= $request->setLang('UTF-8');
-		$this->_data['signatureType']	= $request->getSignatureType('HMACSHA256'),
+		$this->_data['signatureType']		= $request->getSignatureType('HMACSHA256'),
 		$this->_data['signature'] 		= $request->getSignature();
 		$this->_data['responseUrl'] 		= $request->setResponseUrl('http://example.com/response');
 		$this->_data['backendUrl'] 		= $request->setBackendUrl('http://example.com/backend');
