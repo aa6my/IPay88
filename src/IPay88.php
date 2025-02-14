@@ -32,24 +32,25 @@ class IPay88
     public function generateSignature($refNo, $amount, $currency)
     {
         $stringToHash = $this->merchantKey.$this->merchantCode.$refNo.$amount.$currency;
-        return base64_encode(self::_hex2bin(sha1($stringToHash)));
+        return hash_hmac('sha512', $stringToHash, $this->merchantKey);
     }
 
     /**
-    *
-    * equivalent of php 5.4 hex2bin
-    *
-    * @access private
-    * @param string $source The string to be converted
-    */
-    private function _hex2bin($source)
+     *
+     * 2025 - removed this method, new security standard is using HMACSHA256
+     * equivalent of php 5.4 hex2bin
+     *
+     * @access private
+     * @param string $source The string to be converted
+     */
+    /*private static function _hex2bin($source)
     {
     	$bin = null;
-    	for ($i=0; $i < strlen($source); $i=$i+2) { 
+    	for ($i=0; $i < strlen($source); $i=$i+2) {
     		$bin .= chr(hexdec(substr($source, $i, 2)));
     	}
     	return $bin;
-    }
+    }*/
 
     /**
     * @access public
